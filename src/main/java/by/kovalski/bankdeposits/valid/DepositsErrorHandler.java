@@ -10,6 +10,7 @@ import java.io.IOException;
 public class DepositsErrorHandler extends DefaultHandler {
 
   private static Logger logger = LogManager.getLogger();
+
   public void warning(SAXParseException e) {
     logger.warn(getLineAddress(e) + "-" + e.getMessage());
   }
@@ -23,7 +24,7 @@ public class DepositsErrorHandler extends DefaultHandler {
   }
 
   private String getLineAddress(SAXParseException e) {
-    // определение строки и столбца ошибки
+
     return e.getLineNumber() + " : " + e.getColumnNumber();
   }
 

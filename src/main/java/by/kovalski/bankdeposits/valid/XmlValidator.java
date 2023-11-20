@@ -15,20 +15,17 @@ import java.io.IOException;
 public class XmlValidator {
 
     public static void main(String[] args) {
-      String filename = "C:/Users/Acer/Desktop/ITA/projects/BankDeposits/src/main/java/resources/deposits.xml";
-      String schemaname = "C:/Users/Acer/Desktop/ITA/projects/BankDeposits/src/main/java/resources/deposits.xsd";
+      String filename = "src/main/java/resources/deposits.xml";
+      String schemaname = "src/main/java/resources/deposits.xsd";
       String logname = "logs/log.txt";
       Schema schema = null;
       String language = XMLConstants.W3C_XML_SCHEMA_NS_URI;
       SchemaFactory factory = SchemaFactory.newInstance(language);
       try {
-        // установка проверки с использованием XSD
         schema = factory.newSchema(new File(schemaname));
         SAXParserFactory spf = SAXParserFactory.newInstance();
         spf.setSchema(schema);
-        // создание объекта-парсера
         SAXParser parser = spf.newSAXParser();
-        // установка обработчика ошибок и запуск
         parser.parse(filename,new DefaultHandler());
         System.out.println(filename + " is valid");
       } catch (ParserConfigurationException e) {
