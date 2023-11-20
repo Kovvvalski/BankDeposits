@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.kovalski.com/deposits"
+        xmlns:tns="http://www.kovalski.com/deposits"
+        elementFormDefault="qualified">
+
+    <element name="deposit" type="tns:Deposit" abstract="true"/>
+    <element name="demand_deposit" type="tns:demandDeposit" substitutionGroup="tns:deposit"/>
+    <element name="time_deposit" type="tns:timeDeposit" substitutionGroup="tns:deposit"/>
+
+    <element name="deposits">
+        <complexType>
+            <sequence>
+                <element ref="tns:deposit" minOccurs="1"
+                         maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+
+    <complexType name="Deposit">
+        <sequence>
+            <element name="country" type="string"/>
+            <element name="depositor" type="tns:depositor"/>
+            <element name="id" type="tns:id"/>
+            <element name="amount" type="positiveInteger"/>
+            <element name="profitability" type="positiveInteger"/>
+        </sequence>
+        <attribute name="bank" type="string" use="required"/>
+    </complexType>
+
+    <complexType name="demandDeposit">
+        <complexContent>
+            <extension base="tns:Deposit">
+                <attribute name="type" use="optional" default="demand">
+                    <simpleType>
+                        <restriction base="string">
+                            <enumeration value="demand"/>
+                        </restriction>
+                    </simpleType>
+                </attribute>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <complexType name="timeDeposit">
+        <complexContent>
+            <extension base="tns:Deposit">
+                <sequence>
+                    <element name="time" type="date"/>
+                </sequence>
+                <attribute name="type" use="required">
+                    <simpleType>
+                        <restriction base="string">
+                            <enumeration value="settlement"/>
+                            <enumeration value="savings"/>
+                            <enumeration value="accumulative"/>
+                            <enumeration value="metal"/>
+                        </restriction>
+                    </simpleType>
+                </attribute>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <simpleType name="depositor">
+        <restriction base="string">
+            <pattern value="[A-Z]\w*\s[A-Z]\w*"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="id">
+        <restriction base="string">
+            <pattern value="\d{20}"/>
+        </restriction>
+    </simpleType>
+</schema>
+

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deposits xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns="http://www.kovalski.com/deposits"
+          xsi:schemaLocation="http://www.kovalski.com/deposits deposits.xsd">
+
+    <time_deposit bank="Bank of America" type="settlement">
+        <country>USA</country>
+        <depositor>Uncle Sam</depositor>
+        <id>12345678912345678912</id>
+        <amount>123123123</amount>
+        <profitability>99</profitability>
+        <time>1864-12-12</time>
+    </time_deposit>
+
+    <time_deposit bank="China Construction Bank" type="savings">
+        <country>China</country>
+        <depositor>Cho Kun</depositor>
+        <id>87478393874848748373</id>
+        <amount>12312</amount>
+        <profitability>14</profitability>
+        <time>2025-12-14</time>
+    </time_deposit>
+
+    <demand_deposit bank="JPMorgan Chase">
+        <country>USA</country>
+        <depositor>John Murphy</depositor>
+        <id>12345678901234454533</id>
+        <amount>11221212</amount>
+        <profitability>8</profitability>
+    </demand_deposit>
+
+    <demand_deposit bank="The Agricultural Bank of China">
+        <country>CHINA</country>
+        <depositor>Morgan Freeman</depositor>
+        <id>98765432198765432156</id>
+        <amount>1230000000</amount>
+        <profitability>20</profitability>
+    </demand_deposit>
+
+    <time_deposit bank="Mitsubishi UFJ Financial Group" type="accumulative">
+        <country>Japan</country>
+        <depositor>Claus Shell</depositor>
+        <id>65432177897654334567</id>
+        <amount>10000000</amount>
+        <profitability>15</profitability>
+        <time>2026-11-20</time>
+    </time_deposit>
+    
+    <demand_deposit bank="Belarus Bank">
+        <country>Belarus</country>
+        <depositor>Daniil Bylkou</depositor>
+        <id>65432178909512345676</id>
+        <amount>2500</amount>
+        <profitability>5</profitability>
+    </demand_deposit>
+    
+    <time_deposit bank="Deutsche Bank" type="metal">
+        <country>Germany</country>
+        <depositor>Klemens Shell</depositor>
+        <id>98765432111234567892</id>
+        <amount>200000</amount>
+        <profitability>12</profitability>
+        <time>2030-10-30</time>
+    </time_deposit>
+
+   <time_deposit bank="BNP Paribas" type="settlement">
+       <country>France</country>
+       <depositor>Lui Kebab</depositor>
+       <id>67887647473882828882</id>
+       <amount>50000</amount>
+       <profitability>8</profitability>
+       <time>2027-08-12</time>
+   </time_deposit>
+
+    <time_deposit bank="Bank of America" type="metal">
+        <country>USA</country>
+        <depositor>Marcus Morgan</depositor>
+        <id>12345678912345678123</id>
+        <amount>1577643</amount>
+        <profitability>12</profitability>
+        <time>2030-05-12</time>
+    </time_deposit>
+
+    <time_deposit bank="China Construction Bank" type="metal">
+        <country>China</country>
+        <depositor>Kun Cho</depositor>
+        <id>87478393823848748373</id>
+        <amount>123222</amount>
+        <profitability>9</profitability>
+        <time>2027-12-14</time>
+    </time_deposit>
+
+    <demand_deposit bank="JPMorgan Chase">
+        <country>USA</country>
+        <depositor>Math Stone</depositor>
+        <id>12345678901234467323</id>
+        <amount>2000000</amount>
+        <profitability>10</profitability>
+    </demand_deposit>
+
+    <demand_deposit bank="The Agricultural Bank of China">
+        <country>China</country>
+        <depositor>Michael Chase</depositor>
+        <id>98765432198712212156</id>
+        <amount>1230000</amount>
+        <profitability>7</profitability>
+    </demand_deposit>
+
+    <time_deposit bank="Mitsubishi UFJ Financial Group" type="accumulative">
+        <country>Japan</country>
+        <depositor>Victor Petrov</depositor>
+        <id>65432171254654334567</id>
+        <amount>40000000</amount>
+        <profitability>17</profitability>
+        <time>2029-11-20</time>
+    </time_deposit>
+
+    <demand_deposit bank="Belarus Bank">
+        <country>Belarus</country>
+        <depositor>Ivan Ivanov</depositor>
+        <id>65432178909512345124</id>
+        <amount>25030</amount>
+        <profitability>8</profitability>
+    </demand_deposit>
+
+    <time_deposit bank="Deutsche Bank" type="metal">
+        <country>Germany</country>
+        <depositor>Anastasia Petrova</depositor>
+        <id>98765432111234122892</id>
+        <amount>20000</amount>
+        <profitability>10</profitability>
+        <time>2030-09-30</time>
+    </time_deposit>
+
+    <time_deposit bank="BNP Paribas" type="savings">
+        <country>France</country>
+        <depositor>Marsel Fring</depositor>
+        <id>67887647473882122382</id>
+        <amount>502000</amount>
+        <profitability>8</profitability>
+        <time>2027-08-12</time>
+    </time_deposit>
+</deposits>
+
