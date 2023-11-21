@@ -6,6 +6,7 @@ import org.xml.sax.SAXParseException;
 import org.xml.sax.helpers.DefaultHandler;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 public class DepositsErrorHandler extends DefaultHandler {
 
@@ -24,6 +25,7 @@ public class DepositsErrorHandler extends DefaultHandler {
   }
 
   private String getLineAddress(SAXParseException e) {
+
 
     return e.getLineNumber() + " : " + e.getColumnNumber();
   }

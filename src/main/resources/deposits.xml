@@ -45,7 +45,7 @@
         <profitability>15</profitability>
         <time>2026-11-20</time>
     </time_deposit>
-    
+
     <demand_deposit bank="Belarus Bank">
         <country>Belarus</country>
         <depositor>Daniil Bylkou</depositor>
@@ -53,7 +53,7 @@
         <amount>2500</amount>
         <profitability>5</profitability>
     </demand_deposit>
-    
+
     <time_deposit bank="Deutsche Bank" type="metal">
         <country>Germany</country>
         <depositor>Klemens Shell</depositor>
