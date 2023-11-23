@@ -22,8 +22,22 @@
             <element name="country" type="string"/>
             <element name="depositor" type="tns:depositor"/>
             <element name="id" type="tns:id"/>
-            <element name="amount" type="positiveInteger"/>
-            <element name="profitability" type="positiveInteger"/>
+            <element name="amount">
+                <simpleType>
+                    <restriction base="positiveInteger">
+                        <minExclusive value="1"/>
+                        <maxExclusive value="1000000000000"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="profitability">
+                <simpleType>
+                    <restriction base="positiveInteger">
+                        <minInclusive value="1"/>
+                        <maxExclusive value="250"/>
+                    </restriction>
+                </simpleType>
+            </element>
         </sequence>
         <attribute name="bank" type="string" use="required"/>
     </complexType>
@@ -67,9 +81,10 @@
             <pattern value="[A-Z]\w*\s[A-Z]\w*"/>
         </restriction>
     </simpleType>
+
     <simpleType name="id">
-        <restriction base="string">
-            <pattern value="\d{20}"/>
+        <restriction base="ID">
+            <pattern value="d\d{20}"/>
         </restriction>
     </simpleType>
 </schema>
