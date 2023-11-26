@@ -1,23 +1,57 @@
 package by.kovalski.bankdeposits.entity;
 
-import java.time.LocalDate;
+public abstract class Deposit {
+  protected Depositor depositor;
+  protected String bankName;
+  protected int amount;
+  protected int profitability;
+  protected Type type;
 
-public class Deposit {
-  private String id;
-  private Depositor depositor;
-  private String bankName;
-  private int amount;
-  private int profitability;
-  private LocalDate time;
-  private Type type;
+  public Deposit(){
+    depositor = new Depositor();
+  }
 
-  public Deposit(String id, Depositor depositor, String bankName, int amount, int profitability, LocalDate time, Type type) {
-    this.id = id;
+  public Deposit(Depositor depositor, String bankName, int amount, int profitability) {
     this.depositor = depositor;
     this.bankName = bankName;
     this.amount = amount;
     this.profitability = profitability;
-    this.time = time;
-    this.type = type;
+  }
+
+
+  public Depositor getDepositor() {
+    return depositor;
+  }
+
+  public void setDepositor(Depositor depositor) {
+    this.depositor = depositor;
+  }
+
+  public String getBankName() {
+    return bankName;
+  }
+
+  public void setBankName(String bankName) {
+    this.bankName = bankName;
+  }
+
+  public int getAmount() {
+    return amount;
+  }
+
+  public void setAmount(int amount) {
+    this.amount = amount;
+  }
+
+  public int getProfitability() {
+    return profitability;
+  }
+
+  public void setProfitability(int profitability) {
+    this.profitability = profitability;
+  }
+
+  public Type getType() {
+    return this.type;
   }
 }

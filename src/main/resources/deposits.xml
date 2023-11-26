@@ -3,11 +3,11 @@
           xmlns="http://www.kovalski.com/deposits"
           xsi:schemaLocation="http://www.kovalski.com/deposits deposits.xsd">
 
-    <time_deposit bank="Bank of America" type="settlement">
+    <time_deposit type="settlement" bank= "Bank of America" >
         <country>USA</country>
         <depositor>Uncle Sam</depositor>
         <id>d12345678912345678912</id>
-        <amount>212313212312</amount>
+        <amount>2123132123</amount>
         <profitability>26</profitability>
         <time>1864-12-12</time>
     </time_deposit>
@@ -132,7 +132,7 @@
         <time>2030-09-30</time>
     </time_deposit>
 
-    <time_deposit bank="BNP Paribas" type="savings">
+    <time_deposit type="savings" bank="BNP Paribas">
         <country>France</country>
         <depositor>Marsel Fring</depositor>
         <id>d65432177897654334567</id>

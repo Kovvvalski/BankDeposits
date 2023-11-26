@@ -26,7 +26,7 @@
                 <simpleType>
                     <restriction base="positiveInteger">
                         <minExclusive value="1"/>
-                        <maxExclusive value="1000000000000"/>
+                        <maxExclusive value="2147483647"/>
                     </restriction>
                 </simpleType>
             </element>
