@@ -11,6 +11,7 @@ public class DemandDeposit extends Deposit{
 
   public DemandDeposit(){
     super();
+    type = Type.DEMAND;
   }
 
   @Override

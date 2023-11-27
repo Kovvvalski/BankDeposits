@@ -8,7 +8,6 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.EnumSet;
@@ -65,18 +64,7 @@ public class DepositHandler extends DefaultHandler {
   public void characters(char[] ch, int start, int length) throws SAXException {
     String data = new String(ch, start, length);
     if (currentTag != null) {
-      switch (currentTag) {
-        case ID -> current.getDepositor().setAccountId(data);
-        case COUNTRY -> current.getDepositor().setRegistrationCountry(data);
-        case DEPOSITOR -> current.getDepositor().setName(data);
-        case AMOUNT -> current.setAmount(Integer.parseInt(data));
-        case PROFITABILITY -> current.setProfitability(Integer.parseInt(data));
-        case TIME -> {
-          TimeDeposit temp = (TimeDeposit) current;
-          String[] parsed = data.split("-");
-          temp.setTime(LocalDate.of(Integer.parseInt(parsed[0]), Integer.parseInt(parsed[1]), Integer.parseInt(parsed[2])));
-        }
-      }
+      currentTag.setField(current,data);
       currentTag = null;
     }
   }

@@ -1,5 +1,6 @@
-package by.kovalski.bankdeposits.builder;
+package by.kovalski.bankdeposits.builder.impl;
 
+import by.kovalski.bankdeposits.builder.DepositListBuilder;
 import by.kovalski.bankdeposits.entity.Deposit;
 import by.kovalski.bankdeposits.exception.CustomException;
 import by.kovalski.bankdeposits.handler.DepositHandler;
@@ -15,9 +16,8 @@ import javax.xml.parsers.SAXParserFactory;
 import java.io.IOException;
 import java.util.List;
 
-public class DepositSaxBuilder {
+public class DepositSaxBuilder implements DepositListBuilder {
   private static final Logger logger = LogManager.getLogger();
-  private List<Deposit> deposits;
   private final DepositHandler handler = new DepositHandler();
   private final DepositsErrorHandler errorHandler = new DepositsErrorHandler();
   private XMLReader reader;
@@ -35,21 +35,14 @@ public class DepositSaxBuilder {
     reader.setErrorHandler(errorHandler);
   }
 
-  public List<Deposit> getDeposits() {
-    return deposits;
-  }
-
-  public void clearDeposits(){
-    deposits.clear();
-  }
-
-  public void buildListOfDeposits(String fileName) throws CustomException {
+  @Override
+  public List<Deposit> buildListOfDeposits(String fileName) throws CustomException {
     try {
       reader.parse(fileName);
     } catch (IOException | SAXException e) {
       logger.error("Error during opening/parsing file " + fileName, e);
       throw new CustomException("Error during opening/parsing file " + fileName, e);
     }
-    deposits = handler.getDeposits();
+    return handler.getDeposits();
   }
 }
