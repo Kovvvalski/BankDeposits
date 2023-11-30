@@ -1,5 +1,6 @@
 package by.kovalski.bankdeposits.entity;
 
+import java.util.Objects;
 import java.util.StringJoiner;
 
 public class Depositor {
@@ -39,6 +40,19 @@ public class Depositor {
 
   public void setAccountId(String accountId) {
     this.accountId = accountId;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Depositor depositor = (Depositor) o;
+    return name.equals(depositor.name) && accountId.equals(depositor.accountId) && registrationCountry.equals(depositor.registrationCountry);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(accountId, name, registrationCountry);
   }
 
   @Override

@@ -4,8 +4,7 @@
         xmlns:tns="http://www.kovalski.com/deposits"
         elementFormDefault="qualified">
 
-    <element name="deposit" type="tns:Deposit" abstract="true"/>
-    <element name="demand_deposit" type="tns:demandDeposit" substitutionGroup="tns:deposit"/>
+    <element name="deposit" type="tns:Deposit"/>
     <element name="time_deposit" type="tns:timeDeposit" substitutionGroup="tns:deposit"/>
 
     <element name="deposits">
@@ -42,19 +41,6 @@
         <attribute name="bank" type="string" use="required"/>
     </complexType>
 
-    <complexType name="demandDeposit">
-        <complexContent>
-            <extension base="tns:Deposit">
-                <attribute name="type" use="optional" default="demand">
-                    <simpleType>
-                        <restriction base="string">
-                            <enumeration value="demand"/>
-                        </restriction>
-                    </simpleType>
-                </attribute>
-            </extension>
-        </complexContent>
-    </complexType>
 
     <complexType name="timeDeposit">
         <complexContent>

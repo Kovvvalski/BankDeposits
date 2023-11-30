@@ -23,21 +23,21 @@
         <time>2025-12-14</time>
     </time_deposit>
 
-    <demand_deposit bank="JPMorgan Chase">
+    <deposit bank="JPMorgan Chase">
         <country>USA</country>
         <depositor>John Murphy</depositor>
         <id>d12345678901234454583</id>
         <amount>11221212</amount>
         <profitability>8</profitability>
-    </demand_deposit>
+    </deposit>
 
-    <demand_deposit bank="The Agricultural Bank of China">
+    <deposit bank="The Agricultural Bank of China">
         <country>CHINA</country>
         <depositor>Morgan Freeman</depositor>
         <id>d98765432198765432156</id>
         <amount>1230000000</amount>
         <profitability>20</profitability>
-    </demand_deposit>
+    </deposit>
 
     <time_deposit bank="Mitsubishi UFJ Financial Group" type="accumulative">
         <country>Japan</country>
@@ -48,13 +48,13 @@
         <time>2026-11-20</time>
     </time_deposit>
 
-    <demand_deposit bank="Belarus Bank">
+    <deposit bank="Belarus Bank">
         <country>Belarus</country>
         <depositor>Daniil Bylkou</depositor>
         <id>d65432178909512345676</id>
         <amount>2500</amount>
         <profitability>5</profitability>
-    </demand_deposit>
+    </deposit>
 
     <time_deposit bank="Deutsche Bank" type="metal">
         <country>Germany</country>
@@ -92,21 +92,21 @@
         <time>2027-12-14</time>
     </time_deposit>
 
-    <demand_deposit bank="JPMorgan Chase">
+    <deposit bank="JPMorgan Chase">
         <country>USA</country>
         <depositor>Math Stone</depositor>
         <id>d12345678901234467323</id>
         <amount>2000000</amount>
         <profitability>10</profitability>
-    </demand_deposit>
+    </deposit>
 
-    <demand_deposit bank="The Agricultural Bank of China">
+    <deposit bank="The Agricultural Bank of China">
         <country>China</country>
         <depositor>Michael Chase</depositor>
         <id>d98765432198712212156</id>
         <amount>1230000</amount>
         <profitability>7</profitability>
-    </demand_deposit>
+    </deposit>
 
     <time_deposit bank="Mitsubishi UFJ Financial Group" type="accumulative">
         <country>Japan</country>
@@ -117,13 +117,13 @@
         <time>2029-11-20</time>
     </time_deposit>
 
-    <demand_deposit bank="Belarus Bank">
+    <deposit bank="Belarus Bank">
         <country>Belarus</country>
         <depositor>Ivan Ivanov</depositor>
         <id>d65432178909512345124</id>
         <amount>25030</amount>
         <profitability>8</profitability>
-    </demand_deposit>
+    </deposit>
 
     <time_deposit bank="Deutsche Bank" type="metal">
         <country>Germany</country>

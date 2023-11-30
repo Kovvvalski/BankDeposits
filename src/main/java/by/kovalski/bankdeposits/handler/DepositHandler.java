@@ -1,6 +1,5 @@
 package by.kovalski.bankdeposits.handler;
 
-import by.kovalski.bankdeposits.entity.DemandDeposit;
 import by.kovalski.bankdeposits.entity.Deposit;
 import by.kovalski.bankdeposits.entity.TimeDeposit;
 import by.kovalski.bankdeposits.entity.Type;
@@ -14,13 +13,15 @@ import java.util.EnumSet;
 import java.util.List;
 
 public class DepositHandler extends DefaultHandler {
+  private static final String DEPOSIT_ELEMENT = "deposit";
+  private static final String TIME_DEPOSIT_ELEMENT = "time_deposit";
+  private static final String[] TYPE_ATTRIBUTES = new String[]{"settlement", "savings", "accumulative", "metal"};
+
+  private final EnumSet<DepositXmlTag> withText = EnumSet.range(DepositXmlTag.COUNTRY, DepositXmlTag.TIME);
+
   private List<Deposit> deposits;
   private Deposit current;
   private DepositXmlTag currentTag;
-  private final EnumSet<DepositXmlTag> withText = EnumSet.range(DepositXmlTag.COUNTRY, DepositXmlTag.TIME);
-  private static final String DEMAND_DEPOSIT_ELEMENT = "demand_deposit";
-  private static final String TIME_DEPOSIT_ELEMENT = "time_deposit";
-  private static final String[] TYPE_ATTRIBUTES = new String[]{"settlement", "savings", "accumulative", "metal"};
 
   public DepositHandler() {
     deposits = new ArrayList<>();
@@ -42,10 +43,9 @@ public class DepositHandler extends DefaultHandler {
         temp.setBankName(attributes.getValue(1));
         temp.setType(Type.valueOf(attributes.getValue(0).toUpperCase()));
       }
-    } else if (DEMAND_DEPOSIT_ELEMENT.equals(qName)) { //if demand deposit
-      current = new DemandDeposit();
-      DemandDeposit temp = (DemandDeposit) current;
-      temp.setBankName(attributes.getValue(0));
+    } else if (DEPOSIT_ELEMENT.equals(qName)) { //if deposit
+      current = new Deposit();
+      current.setBankName(attributes.getValue(0));
     } else { // if other element
       DepositXmlTag temp = DepositXmlTag.valueOf(qName.toUpperCase());
       if (withText.contains(temp)) {
@@ -56,7 +56,7 @@ public class DepositHandler extends DefaultHandler {
 
   @Override
   public void endElement(String uri, String localName, String qName) throws SAXException {
-    if (DEMAND_DEPOSIT_ELEMENT.equals(qName) || TIME_DEPOSIT_ELEMENT.equals(qName))
+    if (DEPOSIT_ELEMENT.equals(qName) || TIME_DEPOSIT_ELEMENT.equals(qName))
       deposits.add(current);
   }
 
@@ -64,7 +64,7 @@ public class DepositHandler extends DefaultHandler {
   public void characters(char[] ch, int start, int length) throws SAXException {
     String data = new String(ch, start, length);
     if (currentTag != null) {
-      currentTag.setField(current,data);
+      currentTag.setField(current, data);
       currentTag = null;
     }
   }

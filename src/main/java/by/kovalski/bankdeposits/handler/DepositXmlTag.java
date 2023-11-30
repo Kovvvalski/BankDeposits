@@ -30,7 +30,7 @@ public enum DepositXmlTag {
 
     }
   },
-  DEMAND_DEPOSIT("demand_deposit") {
+  DEPOSIT("deposit") {
     @Override
     public void setField(Deposit deposit, String data) {
 
