@@ -31,6 +31,7 @@ public class XmlValidatorImpl implements XmlValidator {
   @Override
   public boolean validateXml(String xmlFile, String xsdFile) {
     SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+    boolean out = true;
     try {
       Schema schema = factory.newSchema(new File(xsdFile));
       Validator validator = schema.newValidator();
@@ -38,8 +39,8 @@ public class XmlValidatorImpl implements XmlValidator {
       validator.validate(new StreamSource(xmlFile));
     } catch (SAXException | IOException e) {
       logger.error("XML is not valid", e);
-      return false;
+      out = false;
     }
-    return true;
+    return out;
   }
 }

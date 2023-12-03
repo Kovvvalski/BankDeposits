@@ -1,14 +1,22 @@
 package by.kovalski.bankdeposits.entity;
 
+import javax.xml.bind.annotation.*;
+import java.io.Serializable;
 import java.util.Objects;
 import java.util.StringJoiner;
 
-public class Depositor {
+@XmlType(name = "shit", propOrder = {"accountId", "name", "registrationCountry"})
+@XmlAccessorType(XmlAccessType.FIELD)
+public class Depositor implements Serializable {
+  @XmlElement(name = "id", required = true)
+  @XmlID
   private String accountId;
+  @XmlElement(name = "name", required = true)
   private String name;
+  @XmlElement(name = "country", required = true)
   private String registrationCountry;
 
-  public Depositor(){
+  public Depositor() {
 
   }
 

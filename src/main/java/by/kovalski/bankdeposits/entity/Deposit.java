@@ -1,16 +1,32 @@
 package by.kovalski.bankdeposits.entity;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import java.io.Serializable;
 import java.util.Objects;
 import java.util.StringJoiner;
 
-public class Deposit {
-  private Depositor depositor;
+
+@XmlType(name = "Deposit", propOrder = {"depositor", "amount", "profitability"})
+@XmlRootElement(name = "deposit")
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlSeeAlso(TimeDeposit.class)
+public class Deposit implements Serializable {
+  @XmlAttribute(name = "bank", required = true)
+  @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
   private String bankName;
+  @XmlElement(required = true)
   private int amount;
+  @XmlElement(required = true)
+  private Depositor depositor = new Depositor();
+  @XmlElement(required = true)
   private int profitability;
 
-  public Deposit(){
-    depositor = new Depositor();
+
+  public Deposit() {
+
   }
 
   public Deposit(Depositor depositor, String bankName, int amount, int profitability) {
@@ -75,4 +91,5 @@ public class Deposit {
             .add("profitability=" + profitability)
             .toString();
   }
+
 }

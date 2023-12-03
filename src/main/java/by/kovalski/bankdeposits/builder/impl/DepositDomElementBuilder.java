@@ -2,7 +2,6 @@ package by.kovalski.bankdeposits.builder.impl;
 
 import by.kovalski.bankdeposits.builder.DepositListBuilder;
 import by.kovalski.bankdeposits.entity.Deposit;
-import by.kovalski.bankdeposits.entity.Depositor;
 import by.kovalski.bankdeposits.entity.TimeDeposit;
 import by.kovalski.bankdeposits.entity.Type;
 import by.kovalski.bankdeposits.exception.CustomException;
@@ -18,7 +17,6 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
-import java.net.Proxy;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;

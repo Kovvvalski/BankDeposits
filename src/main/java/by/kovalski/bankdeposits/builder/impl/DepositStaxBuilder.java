@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DepositStaxBuilder implements DepositListBuilder {
-  private final static Logger logger = LogManager.getLogger();
+  private static final Logger logger = LogManager.getLogger();
 
   @Override
   public List<Deposit> buildListOfDeposits(String fileName) throws CustomException {

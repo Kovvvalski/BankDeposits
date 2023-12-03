@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<deposits>
+    <time_deposit type="settlement" bank="Bank of America">
+        <depositor>
+            <id>d12345678912345678912</id>
+            <name>Uncle Sam</name>
+            <country>USA</country>
+        </depositor>
+        <amount>2123132123</amount>
+        <profitability>26</profitability>
+        <time>1864-12-12</time>
+    </time_deposit>
+    <time_deposit type="savings" bank="China Construction Bank">
+        <depositor>
+            <id>d87478393874848748373</id>
+            <name>Cho Kun</name>
+            <country>China</country>
+        </depositor>
+        <amount>12312</amount>
+        <profitability>14</profitability>
+        <time>2025-12-14</time>
+    </time_deposit>
+    <deposit bank="JPMorgan Chase">
+        <depositor>
+            <id>d12345678901234454583</id>
+            <name>John Murphy</name>
+            <country>USA</country>
+        </depositor>
+        <amount>11221212</amount>
+        <profitability>8</profitability>
+    </deposit>
+    <deposit bank="The Agricultural Bank of China">
+        <depositor>
+            <id>d98765432198765432156</id>
+            <name>Morgan Freeman</name>
+            <country>CHINA</country>
+        </depositor>
+        <amount>1230000000</amount>
+        <profitability>20</profitability>
+    </deposit>
+    <time_deposit type="accumulative" bank="Mitsubishi UFJ Financial Group">
+        <depositor>
+            <id>d65432177897654331267</id>
+            <name>Claus Shell</name>
+            <country>Japan</country>
+        </depositor>
+        <amount>10000000</amount>
+        <profitability>15</profitability>
+        <time>2026-11-20</time>
+    </time_deposit>
+    <deposit bank="Belarus Bank">
+        <depositor>
+            <id>d65432178909512345676</id>
+            <name>Daniil Bylkou</name>
+            <country>Belarus</country>
+        </depositor>
+        <amount>2500</amount>
+        <profitability>5</profitability>
+    </deposit>
+    <time_deposit type="metal" bank="Deutsche Bank">
+        <depositor>
+            <id>d98765432111234567892</id>
+            <name>Klemens Shell</name>
+            <country>Germany</country>
+        </depositor>
+        <amount>200000</amount>
+        <profitability>12</profitability>
+        <time>2030-10-30</time>
+    </time_deposit>
+    <time_deposit type="settlement" bank="BNP Paribas">
+        <depositor>
+            <id>d67887647473882828882</id>
+            <name>Lui Kebab</name>
+            <country>France</country>
+        </depositor>
+        <amount>50000</amount>
+        <profitability>8</profitability>
+        <time>2027-08-12</time>
+    </time_deposit>
+    <time_deposit type="metal" bank="Bank of America">
+        <depositor>
+            <id>d12345678912345678123</id>
+            <name>Marcus Morgan</name>
+            <country>USA</country>
+        </depositor>
+        <amount>1577643</amount>
+        <profitability>12</profitability>
+        <time>2030-05-12</time>
+    </time_deposit>
+    <time_deposit type="metal" bank="China Construction Bank">
+        <depositor>
+            <id>d87478393823848748373</id>
+            <name>Kun Cho</name>
+            <country>China</country>
+        </depositor>
+        <amount>123222</amount>
+        <profitability>9</profitability>
+        <time>2027-12-14</time>
+    </time_deposit>
+    <deposit bank="JPMorgan Chase">
+        <depositor>
+            <id>d12345678901234467323</id>
+            <name>Math Stone</name>
+            <country>USA</country>
+        </depositor>
+        <amount>2000000</amount>
+        <profitability>10</profitability>
+    </deposit>
+    <deposit bank="The Agricultural Bank of China">
+        <depositor>
+            <id>d98765432198712212156</id>
+            <name>Michael Chase</name>
+            <country>China</country>
+        </depositor>
+        <amount>1230000</amount>
+        <profitability>7</profitability>
+    </deposit>
+    <time_deposit type="accumulative" bank="Mitsubishi UFJ Financial Group">
+        <depositor>
+            <id>d65432171254654334567</id>
+            <name>Victor Petrov</name>
+            <country>Japan</country>
+        </depositor>
+        <amount>40000000</amount>
+        <profitability>17</profitability>
+        <time>2029-11-20</time>
+    </time_deposit>
+    <deposit bank="Belarus Bank">
+        <depositor>
+            <id>d65432178909512345124</id>
+            <name>Ivan Ivanov</name>
+            <country>Belarus</country>
+        </depositor>
+        <amount>25030</amount>
+        <profitability>8</profitability>
+    </deposit>
+    <time_deposit type="metal" bank="Deutsche Bank">
+        <depositor>
+            <id>d98765432111234122892</id>
+            <name>Anastasia Petrova</name>
+            <country>Germany</country>
+        </depositor>
+        <amount>20000</amount>
+        <profitability>10</profitability>
+        <time>2030-09-30</time>
+    </time_deposit>
+    <time_deposit type="savings" bank="BNP Paribas">
+        <depositor>
+            <id>d65432177897654334567</id>
+            <name>Marsel Fring</name>
+            <country>France</country>
+        </depositor>
+        <amount>502000</amount>
+        <profitability>8</profitability>
+        <time>2027-08-12</time>
+    </time_deposit>
+</deposits>
