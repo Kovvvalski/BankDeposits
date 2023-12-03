@@ -5,7 +5,7 @@ import java.io.Serializable;
 import java.util.Objects;
 import java.util.StringJoiner;
 
-@XmlType(name = "shit", propOrder = {"accountId", "name", "registrationCountry"})
+@XmlType(name = "Depositor", propOrder = {"accountId", "name", "registrationCountry"})
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Depositor implements Serializable {
   @XmlElement(name = "id", required = true)
