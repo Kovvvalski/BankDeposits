@@ -3,10 +3,7 @@ package by.kovalski.bankdeposits.main;
 import by.kovalski.bankdeposits.adapter.LocalDateAdapter;
 import by.kovalski.bankdeposits.adapter.TypeAdapter;
 import by.kovalski.bankdeposits.builder.DepositListBuilder;
-import by.kovalski.bankdeposits.builder.impl.DepositDomElementBuilder;
-import by.kovalski.bankdeposits.builder.impl.DepositSaxBuilder;
-import by.kovalski.bankdeposits.builder.impl.DepositStaxBuilder;
-import by.kovalski.bankdeposits.builder.impl.DepositStaxEventBuilder;
+import by.kovalski.bankdeposits.builder.impl.*;
 import by.kovalski.bankdeposits.entity.*;
 import by.kovalski.bankdeposits.exception.CustomException;
 
@@ -60,22 +57,15 @@ public class Main {
     System.out.println();
     System.out.println();
     System.out.println();
+    builder = new DepositJaxbBuilder();
+    deposits = builder.buildListOfDeposits("src/main/resources/jaxb_data.xml");
+    for (Deposit deposit : deposits)
+      System.out.println(deposit);
 
-    try {
-      Deposits deposits1 = new Deposits();
-      deposits1.setDeposits(deposits);
-      Deposits deposits2 = new Deposits();
-      JAXBContext context = JAXBContext.newInstance(Deposit.class, Depositor.class, LocalDateAdapter.class, TypeAdapter.class, Deposits.class);
-      Marshaller m = context.createMarshaller();
-      m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-      m.marshal(deposits1,new FileOutputStream("src/main/resources/jaxb_data.xml"));
-      Unmarshaller u = context.createUnmarshaller();
-      deposits2 = (Deposits) u.unmarshal(new FileInputStream("src/main/resources/jaxb_data.xml"));
-      deposits = deposits2.getDeposits();
-      for (Deposit deposit : deposits)
-        System.out.println(deposit);
-    }catch (JAXBException e){
-      e.printStackTrace();
-    }
+
+    System.out.println();
+    System.out.println();
+    System.out.println();
+
   }
 }

@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DepositDomElementBuilder implements DepositListBuilder {
-  private final static Logger logger = LogManager.getLogger();
+  private static final Logger logger = LogManager.getLogger();
   private DocumentBuilder docBuilder;
 
   public DepositDomElementBuilder() throws CustomException {
@@ -70,13 +70,13 @@ public class DepositDomElementBuilder implements DepositListBuilder {
     try {
       document = docBuilder.parse(fileName);
       Element root = document.getDocumentElement();
-      NodeList deposits = root.getElementsByTagName("deposit");
+      NodeList deposits = root.getElementsByTagName(DepositXmlTag.DEPOSIT.getValue());
       for (int i = 0; i < deposits.getLength(); i++) {
         Element element = (Element) deposits.item(i);
         Deposit deposit = buildDeposit(element);
         out.add(deposit);
       }
-      deposits = root.getElementsByTagName("time_deposit");
+      deposits = root.getElementsByTagName(DepositXmlTag.TIME_DEPOSIT.getValue());
       for (int i = 0; i < deposits.getLength(); i++) {
         Element element = (Element) deposits.item(i);
         Deposit deposit = buildTimeDeposit(element);
