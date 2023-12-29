@@ -8,7 +8,6 @@ import java.io.Serializable;
 import java.util.Objects;
 import java.util.StringJoiner;
 
-
 @XmlType(name = "Deposit", propOrder = {"depositor", "amount", "profitability"})
 @XmlRootElement(name = "deposit")
 @XmlAccessorType(XmlAccessType.FIELD)
